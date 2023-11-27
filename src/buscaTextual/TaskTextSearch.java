@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-
 public class TaskTextSearch implements Runnable {
     private String fileName;
     private String name;
@@ -24,12 +23,12 @@ public class TaskTextSearch implements Runnable {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
 
-                if (line.toLowerCase().contains(name.toLowerCase())) {
+                if (line.toLowerCase(null).contains(name.toLowerCase())) {
                     System.out.println(
                             String.format("File: [%s] - Line number: [%d] - %s", fileName, lineNumber, line));
                 }
 
-                lineNumber ++ ;
+                lineNumber++;
 
             }
 
