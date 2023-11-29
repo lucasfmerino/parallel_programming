@@ -13,11 +13,15 @@ public class Main {
 
         Thread guest4 = new Thread(new TaskNumber2(bathroom), "Convidado 04");
 
+        Thread cleaner = new Thread(new TaskCleanse(bathroom), "Limpeza");
+        cleaner.setDaemon(true);
+
         
 
         guest1.start();
         guest2.start();
         guest3.start();
         guest4.start();
+        cleaner.start();
     }
 }
