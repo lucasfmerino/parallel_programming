@@ -6,14 +6,12 @@ public class Main {
         
         Lista lista = new Lista();
 
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 100; i++) {
             new Thread(new TarefaAdicionarElemento(lista, i)).start();
         }
 
-        Thread.sleep(2000);
+        new Thread(new TarefaImprimir(lista)).start();
 
-        for (int i=0; i < lista.tamanho(); i++) {
-            System.out.println(i + " - " + lista.pegaElemento(i));
-        }
+
     }
 }
